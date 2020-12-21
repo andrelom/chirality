@@ -28,7 +28,7 @@ namespace Chirality.Agent
             }
             catch (Exception)
             {
-                Console.WriteLine(Messages.ShutdownDueUnexpectedError);
+                Console.WriteLine(Constants.Messages.ShutdownDueUnexpectedError);
             }
             finally
             {
