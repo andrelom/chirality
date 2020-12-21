@@ -15,6 +15,12 @@ namespace Chirality.Agent
             _writer = new StreamWriter(System.Console.OpenStandardOutput());
         }
 
+        public void Dispose()
+        {
+            _reader.Dispose();
+            _writer.Dispose();
+        }
+
         public void WriteLine(string value)
         {
             _writer.WriteLine(value);

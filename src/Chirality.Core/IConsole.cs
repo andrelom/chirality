@@ -1,6 +1,8 @@
+using System;
+
 namespace Chirality.Core
 {
-    public interface IConsole
+    public interface IConsole : IDisposable
     {
         void WriteLine(string value);
     }
