@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirality.Core", "src\Chira
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirality.P2P", "src\Chirality.P2P\Chirality.P2P.csproj", "{F3FD67A5-CD99-420E-AFD7-443DD2CB36B8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5AEF2BC8-C2AA-4673-8F1C-98C13F6B82D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chirality.Agent", "src\Chirality.Agent\Chirality.Agent.csproj", "{FA02A8C1-D67E-47A2-B6FA-4945017890AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{F3FD67A5-CD99-420E-AFD7-443DD2CB36B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3FD67A5-CD99-420E-AFD7-443DD2CB36B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3FD67A5-CD99-420E-AFD7-443DD2CB36B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA02A8C1-D67E-47A2-B6FA-4945017890AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA02A8C1-D67E-47A2-B6FA-4945017890AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA02A8C1-D67E-47A2-B6FA-4945017890AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA02A8C1-D67E-47A2-B6FA-4945017890AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA02A8C1-D67E-47A2-B6FA-4945017890AE} = {5AEF2BC8-C2AA-4673-8F1C-98C13F6B82D7}
 	EndGlobalSection
 EndGlobal

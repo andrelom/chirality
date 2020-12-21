@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Chirality.Core\Chirality.Core.csproj" />
+      <ProjectReference Include="..\Chirality.P2P\Chirality.P2P.csproj" />
+    </ItemGroup>
+
+</Project>
