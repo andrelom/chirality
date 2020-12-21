@@ -25,7 +25,7 @@ namespace Chirality.Core.Utilities
 
             var process = Process.GetCurrentProcess();
 
-            return Path.GetDirectoryName(process.MainModule.FileName);
+            return Path.GetDirectoryName(process.MainModule?.FileName);
         }
     }
 }
