@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Chirality.Core;
 
@@ -19,6 +20,8 @@ namespace Chirality.Agent
         {
             _reader.Dispose();
             _writer.Dispose();
+
+            GC.SuppressFinalize(this);
         }
 
         public void WriteLine(string value)
