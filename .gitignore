@@ -5,6 +5,7 @@
 .idea/
 bin/
 obj/
+release/
 
 #
 # Files
