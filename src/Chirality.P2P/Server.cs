@@ -2,6 +2,7 @@ using System;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using Chirality.Core;
 using Chirality.Core.Extensions;
 using Chirality.P2P.Sockets;
 using Microsoft.Extensions.Hosting;
@@ -15,15 +16,18 @@ namespace Chirality.P2P
 
         private readonly IHostApplicationLifetime _lifetime;
 
+        private readonly ISettings _settings;
+
         private readonly AsyncTcpListener _listener;
 
         public Server(ILogger<Server> logger,
             IHostApplicationLifetime lifetime,
-            AsyncTcpListener listener)
+            ISettings settings)
         {
             _logger = logger;
             _lifetime = lifetime;
-            _listener = listener;
+            _settings = settings;
+            _listener = new AsyncTcpListener(_settings.Host, _settings.Port);
         }
 
         public async Task StartAsync(CancellationToken token)
