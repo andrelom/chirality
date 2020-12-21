@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Chirality.P2P.Extensions
+namespace Chirality.Core.Extensions
 {
     public static class TcpListenerExtensions
     {
