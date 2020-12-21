@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Chirality.Core;
 using Chirality.Core.Utilities;
@@ -35,8 +37,31 @@ namespace Chirality.Agent
 
         private static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
         {
+            var settings = GetSettings();
+
+            // Shared
+            services.AddSingleton<ISettings>(settings);
+
             // Hosted Services
             services.AddHostedService<Server>();
+        }
+
+        private static Settings GetSettings()
+        {
+            var path = ProcessUtility.GetExecutionPath();
+            var file = Path.Join(path, Constants.SettingsFileName);
+
+            if (File.Exists(file))
+            {
+                return JsonSerializer.Deserialize<Settings>(File.ReadAllText(file));
+            }
+
+            var settings = new Settings();
+            var options = new JsonSerializerOptions { WriteIndented = true };
+
+            File.WriteAllText(file, JsonSerializer.Serialize(settings, options));
+
+            return settings;
         }
 
         #endregion
