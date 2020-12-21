@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using Chirality.Core.Utilities;
 using Chirality.P2P;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Chirality.Agent
 {
@@ -16,6 +18,7 @@ namespace Chirality.Agent
         {
             var token = ProcessUtility.CreateCancellationToken();
             var host = new HostBuilder()
+                .ConfigureLogging(ConfigureLogging)
                 .ConfigureServices(ConfigureServices)
                 .Build();
 
@@ -44,6 +47,20 @@ namespace Chirality.Agent
 
             // Hosted Services
             services.AddHostedService<Server>();
+        }
+
+        private static void ConfigureLogging(HostBuilderContext context, ILoggingBuilder logging)
+        {
+            var path = ProcessUtility.GetExecutionPath();
+            var file = Path.Join(path, Constants.LogFileName);
+
+            logging.ClearProviders();
+
+            logging.AddFile(file, LogLevel.Information, new Dictionary<string, LogLevel>
+            {
+                { "System", LogLevel.None },
+                { "Microsoft", LogLevel.None }
+            });
         }
 
         private static Settings GetSettings()
