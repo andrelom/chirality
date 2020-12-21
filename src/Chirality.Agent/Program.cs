@@ -47,6 +47,7 @@ namespace Chirality.Agent
             services.AddSingleton<IConsole, Console>();
 
             // Hosted Services
+            services.AddHostedService<Client>();
             services.AddHostedService<Server>();
         }
 
