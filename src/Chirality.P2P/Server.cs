@@ -32,6 +32,8 @@ namespace Chirality.P2P
 
         public async Task StartAsync(CancellationToken token)
         {
+            _logger.LogInformation(string.Format(Constants.Messages.ListeningOn, _settings.Host, _settings.Port));
+
             try
             {
                 await _listener.StartAcceptAsync(HandleClientAsync, token);
