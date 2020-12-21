@@ -28,7 +28,7 @@ namespace Chirality.Agent
             }
             catch (Exception)
             {
-                Console.WriteLine(Constants.Messages.ShutdownDueUnexpectedError);
+                System.Console.WriteLine(Constants.Messages.ShutdownDueUnexpectedError);
             }
             finally
             {
@@ -44,6 +44,7 @@ namespace Chirality.Agent
 
             // Shared
             services.AddSingleton<ISettings>(settings);
+            services.AddSingleton<IConsole, Console>();
 
             // Hosted Services
             services.AddHostedService<Server>();
