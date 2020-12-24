@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 
-namespace Chirality.Core.Utilities
+namespace Chirality.Agent.Utilities
 {
     public static class ProcessUtility
     {
