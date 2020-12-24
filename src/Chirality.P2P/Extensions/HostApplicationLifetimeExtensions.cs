@@ -1,8 +1,9 @@
 using System;
+using Chirality.Core.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Chirality.Core.Extensions
+namespace Chirality.P2P.Extensions
 {
     public static class HostApplicationLifetimeExtensions
     {

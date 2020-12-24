@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Chirality.Core;
 using Chirality.Core.Extensions;
+using Chirality.P2P.Extensions;
 using Chirality.P2P.Sockets;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
