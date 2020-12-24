@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using Chirality.Core.Extensions;
+using Chirality.P2P.Extensions;
 
 namespace Chirality.P2P.Sockets
 {
